@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappa interattiva — Memorie del Territorio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="header-brand">
+      <img src="assets/img/logo-scuola.svg" alt="Istituto Comprensivo Acquedolci" class="header-logo">
+      <div class="header-titles">
+        <span class="header-scuola">Istituto Comprensivo Acquedolci</span>
+        <span class="header-progetto">Memorie del Territorio</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="mappa.html" class="active">Mappa</a></li>
+        <li><a href="podcast/index.html">Podcast</a></li>
+        <li><a href="galleria/index.html">Galleria</a></li>
+        <li><a href="dietro-le-quinte/index.html">Dietro le quinte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- INNER HERO -->
+  <section class="inner-hero">
+    <svg class="hero-silhouette" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,80 L100,60 L220,70 L360,40 L480,60 L600,50 L720,30 L840,55 L960,45 L1080,60 L1200,40 L1320,55 L1440,48 L1440,120 L0,120 Z" fill="#2196F3" opacity="0.3"/>
+      <path d="M0,95 L180,80 L360,88 L540,75 L720,82 L900,72 L1080,80 L1260,75 L1440,80 L1440,120 L0,120 Z" fill="#1C2035" opacity="0.5"/>
+    </svg>
+    <div class="inner-hero-content">
+      <p class="hero-eyebrow">Esplora il territorio</p>
+      <h1>Mappa interattiva</h1>
+      <p class="sottotitolo">Clicca sui pin per scoprire i siti del progetto</p>
+    </div>
+  </section>
+
+  <!-- MAPPA -->
+  <div id="mappa"></div>
+
+  <div class="mappa-legenda">
+    <span style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#aaa;margin-right:0.5rem;">Siti:</span>
+    <div class="legenda-item"><div class="legenda-dot" style="background:#2196F3"></div> Grotta di San Teodoro</div>
+    <div class="legenda-item"><div class="legenda-dot" style="background:#4BA535"></div> Apollonia</div>
+    <div class="legenda-item"><div class="legenda-dot" style="background:#D4841E"></div> Monte San Fratello</div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo-wrap">
+      <img src="assets/img/logo-scuola.svg" alt="Logo scuola" class="footer-logo">
+      <span class="footer-nome">Istituto Comprensivo Acquedolci</span>
+    </div>
+    <div class="footer-arco">
+      <span style="background:#D4841E"></span>
+      <span style="background:#4BA535"></span>
+      <span style="background:#2196F3"></span>
+    </div>
+    <p class="footer-credits">Progetto Memorie del Territorio &mdash; Acquedolci (ME)</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const colori = ['#2196F3', '#4BA535', '#D4841E', '#7B5EA7'];
+
+      const map = L.map('mappa', {
+        center: [38.03, 14.62],
+        zoom: 12,
+        zoomControl: true,
+        scrollWheelZoom: true
+      });
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      try {
+        const res = await fetch('dati/siti.json');
+        const siti = await res.json();
+
+        siti.forEach((sito, i) => {
+          const color = colori[i % colori.length];
+
+          const pinHtml = `
+            <div style="
+              position:relative;
+              width:32px;height:42px;
+              animation:pinDrop 0.5s cubic-bezier(.36,.07,.19,.97) ${i * 0.15}s both;
+            ">
+              <div style="
+                width:32px;height:32px;
+                background:${color};
+                border-radius:50% 50% 50% 0;
+                transform:rotate(-45deg);
+                border:3px solid white;
+                box-shadow:0 3px 14px rgba(0,0,0,0.3);
+              ">
+                <div style="
+                  width:10px;height:10px;
+                  background:white;
+                  border-radius:50%;
+                  position:absolute;
+                  top:8px;left:8px;
+                  transform:rotate(45deg);
+                "></div>
+              </div>
+              <div style="
+                width:8px;height:8px;
+                background:rgba(0,0,0,0.15);
+                border-radius:50%;
+                margin:2px auto 0;
+                filter:blur(2px);
+              "></div>
+            </div>`;
+
+          const icon = L.divIcon({
+            className: '',
+            html: pinHtml,
+            iconSize: [32, 50],
+            iconAnchor: [16, 50],
+            popupAnchor: [0, -54]
+          });
+
+          const descBreve = sito.descrizione.length > 90
+            ? sito.descrizione.substring(0, 90) + '…'
+            : sito.descrizione;
+
+          const popup = L.popup({ maxWidth: 270, minWidth: 220, className: 'custom-popup' })
+            .setContent(`
+              <div style="padding:4px 2px">
+                <p class="popup-periodo">${sito.periodo}</p>
+                <h3 class="popup-nome">${sito.nome}</h3>
+                <p class="popup-desc">${descBreve}</p>
+                <a href="siti/${sito.id}.html" class="popup-btn">Vai al sito →</a>
+              </div>`);
+
+          L.marker(sito.coordinate, { icon }).addTo(map).bindPopup(popup);
+        });
+      } catch (e) {
+        console.warn('Errore caricamento siti:', e);
+      }
+    });
+  </script>
+
+  <style>
+    @keyframes pinDrop {
+      0%   { transform: translateY(-30px); opacity: 0; }
+      70%  { transform: translateY(4px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</body>
+</html>

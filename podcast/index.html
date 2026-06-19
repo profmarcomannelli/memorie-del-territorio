@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast — Memorie del Territorio</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="header-brand">
+      <img src="../assets/img/logo-scuola.svg" alt="Istituto Comprensivo Acquedolci" class="header-logo">
+      <div class="header-titles">
+        <span class="header-scuola">Istituto Comprensivo Acquedolci</span>
+        <span class="header-progetto">Memorie del Territorio</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="../mappa.html">Mappa</a></li>
+        <li><a href="index.html" class="active">Podcast</a></li>
+        <li><a href="../galleria/index.html">Galleria</a></li>
+        <li><a href="../dietro-le-quinte/index.html">Dietro le quinte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="inner-hero">
+    <svg class="hero-silhouette" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,80 L100,60 L220,70 L360,40 L480,60 L600,50 L720,30 L840,55 L960,45 L1080,60 L1200,40 L1320,55 L1440,48 L1440,120 L0,120 Z" fill="#4BA535" opacity="0.25"/>
+      <path d="M0,95 L180,80 L360,88 L540,75 L720,82 L900,72 L1080,80 L1260,75 L1440,80 L1440,120 L0,120 Z" fill="#1C2035" opacity="0.5"/>
+    </svg>
+    <div class="inner-hero-content">
+      <p class="hero-eyebrow">Le voci del territorio</p>
+      <h1>Podcast</h1>
+      <p class="sottotitolo">Gli studenti raccontano storia, archeologia e scoperte</p>
+    </div>
+  </section>
+
+  <!-- CONTENUTO -->
+  <section class="section">
+    <a href="../index.html" class="breadcrumb reveal">← Torna alla home</a>
+
+    <p class="section-label">Episodi</p>
+    <h2 class="section-title reveal">Le voci<br><em>dei ragazzi</em></h2>
+    <p class="section-intro reveal reveal-delay-1">
+      Ogni episodio è realizzato dagli studenti dell'Istituto Comprensivo Acquedolci:
+      ricerche, interviste, narrazioni sul campo. I podcast vengono pubblicati
+      su Spotify per raggiungere il pubblico più ampio possibile.
+    </p>
+
+    <div class="podcast-episodi" id="lista-episodi">
+
+      <!-- Episodio placeholder 1 -->
+      <div class="podcast-ep reveal">
+        <span class="podcast-ep-num">Episodio in arrivo</span>
+        <h3 class="podcast-ep-titolo">La Grotta di San Teodoro</h3>
+        <p class="podcast-ep-desc">
+          Viaggio nel Paleolitico superiore: chi erano gli abitanti della grotta?
+          Cosa mangiavano? Come vivevano? I ragazzi raccontano i reperti e le scoperte
+          degli archeologi che hanno scavato il sito.
+        </p>
+        <div class="placeholder-vuoto" style="padding:1.5rem;margin-bottom:0">
+          <p style="font-size:0.85rem">L'episodio sarà disponibile qui durante il corso</p>
+        </div>
+      </div>
+
+      <!-- Episodio placeholder 2 -->
+      <div class="podcast-ep reveal reveal-delay-1" style="border-color:var(--cielo)">
+        <span class="podcast-ep-num" style="color:var(--cielo)">Episodio in arrivo</span>
+        <h3 class="podcast-ep-titolo">Apollonia, la città perduta</h3>
+        <p class="podcast-ep-desc">
+          Un sito ancora avvolto nel mistero. Gli studenti esplorano le fonti storiche
+          e le ultime ricerche per ricostruire la storia di questa città greca
+          dell'entroterra messinese.
+        </p>
+        <div class="placeholder-vuoto" style="padding:1.5rem;margin-bottom:0">
+          <p style="font-size:0.85rem">L'episodio sarà disponibile qui durante il corso</p>
+        </div>
+      </div>
+
+      <!-- Episodio placeholder 3 -->
+      <div class="podcast-ep reveal reveal-delay-2" style="border-color:var(--terra)">
+        <span class="podcast-ep-num" style="color:var(--terra)">Episodio in arrivo</span>
+        <h3 class="podcast-ep-titolo">Monte San Fratello, il borgo dei Normanni</h3>
+        <p class="podcast-ep-desc">
+          Dal periodo greco-romano al Medioevo normanno: come si sono stratificate
+          le civiltà su questo monte? I ragazzi raccontano la storia del borgo
+          e delle sue tradizioni sopravvissute fino ad oggi.
+        </p>
+        <div class="placeholder-vuoto" style="padding:1.5rem;margin-bottom:0">
+          <p style="font-size:0.85rem">L'episodio sarà disponibile qui durante il corso</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INFO PER IL DOCENTE -->
+    <div style="background:var(--notte);border-radius:2px;padding:2rem;margin-top:3rem;" class="reveal">
+      <p style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);margin-bottom:0.5rem;">Come aggiornare i podcast</p>
+      <p style="color:var(--pietra);font-size:0.9rem;line-height:1.7;opacity:0.8;">
+        Una volta pubblicato l'episodio su Spotify, copia il link del player embed
+        e sostituiscilo nel file <code style="background:rgba(255,255,255,0.1);padding:0.1em 0.4em;border-radius:2px;font-family:var(--font-mono);font-size:0.85em;">dati/podcast.json</code>.
+        L'episodio apparirà automaticamente su questa pagina.
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-logo-wrap">
+      <img src="../assets/img/logo-scuola.svg" alt="Logo scuola" class="footer-logo">
+      <span class="footer-nome">Istituto Comprensivo Acquedolci</span>
+    </div>
+    <div class="footer-arco">
+      <span style="background:#D4841E"></span>
+      <span style="background:#4BA535"></span>
+      <span style="background:#2196F3"></span>
+    </div>
+    <p class="footer-credits">Progetto Memorie del Territorio &mdash; Acquedolci (ME)</p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleria — Memorie del Territorio</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .filtri {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filtro-btn {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border: 1.5px solid var(--pietra);
+      background: transparent;
+      color: var(--notte);
+      cursor: pointer;
+      border-radius: 1px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .filtro-btn:hover,
+    .filtro-btn.attivo { background: var(--notte); color: white; border-color: var(--notte); }
+    .filtro-btn.attivo-terra  { background: var(--terra); border-color: var(--terra); color: white; }
+    .filtro-btn.attivo-verde  { background: var(--bosco); border-color: var(--bosco); color: white; }
+    .filtro-btn.attivo-blu    { background: var(--cielo); border-color: var(--cielo); color: white; }
+
+    .galleria-item-placeholder {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border-radius: 1px;
+      position: relative;
+    }
+    .galleria-ph {
+      width: 100%;
+      display: block;
+      background: var(--pietra);
+      position: relative;
+    }
+    .galleria-ph-label {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      background: rgba(28,32,53,0.5);
+      padding: 0.2rem 0.5rem;
+      border-radius: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="header-brand">
+      <img src="../assets/img/logo-scuola.svg" alt="Istituto Comprensivo Acquedolci" class="header-logo">
+      <div class="header-titles">
+        <span class="header-scuola">Istituto Comprensivo Acquedolci</span>
+        <span class="header-progetto">Memorie del Territorio</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="../mappa.html">Mappa</a></li>
+        <li><a href="../podcast/index.html">Podcast</a></li>
+        <li><a href="index.html" class="active">Galleria</a></li>
+        <li><a href="../dietro-le-quinte/index.html">Dietro le quinte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="inner-hero">
+    <svg class="hero-silhouette" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,80 L100,60 L220,70 L360,40 L480,60 L600,50 L720,30 L840,55 L960,45 L1080,60 L1200,40 L1320,55 L1440,48 L1440,120 L0,120 Z" fill="#D4841E" opacity="0.25"/>
+      <path d="M0,95 L180,80 L360,88 L540,75 L720,82 L900,72 L1080,80 L1260,75 L1440,80 L1440,120 L0,120 Z" fill="#1C2035" opacity="0.5"/>
+    </svg>
+    <div class="inner-hero-content">
+      <p class="hero-eyebrow">Immagini dal campo</p>
+      <h1>Galleria fotografica</h1>
+      <p class="sottotitolo">Siti, reperti e uscite — raccolti dagli studenti</p>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="chiudiLightbox()">
+    <button class="lightbox-close" onclick="chiudiLightbox()">×</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- CONTENUTO -->
+  <section class="section">
+    <a href="../index.html" class="breadcrumb reveal">← Torna alla home</a>
+
+    <p class="section-label">Archivio fotografico</p>
+    <h2 class="section-title reveal">Le immagini<br><em>del progetto</em></h2>
+    <p class="section-intro reveal reveal-delay-1">
+      Fotografie scattate durante le uscite sul campo, dai siti archeologici
+      ai laboratori didattici. La galleria si arricchirà durante il corso dell'anno.
+    </p>
+
+    <!-- FILTRI -->
+    <div class="filtri reveal reveal-delay-2">
+      <button class="filtro-btn attivo" onclick="filtra('tutti', this)">Tutti</button>
+      <button class="filtro-btn" onclick="filtra('san-teodoro', this)" data-color="terra">Grotta di San Teodoro</button>
+      <button class="filtro-btn" onclick="filtra('apollonia', this)" data-color="verde">Apollonia</button>
+      <button class="filtro-btn" onclick="filtra('monte-san-fratello', this)" data-color="blu">Monte San Fratello</button>
+    </div>
+
+    <!-- GRIGLIA placeholder — sarà popolata da JSON -->
+    <div class="galleria-grid" id="griglia-galleria">
+
+      <!-- Placeholder San Teodoro -->
+      <div class="galleria-item-placeholder reveal" data-sito="san-teodoro">
+        <div class="galleria-ph" style="height:220px;background:linear-gradient(135deg,#8B7355,#5C4033)">
+          <span class="galleria-ph-label">San Teodoro</span>
+        </div>
+      </div>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="san-teodoro">
+        <div class="galleria-ph" style="height:160px;background:linear-gradient(135deg,#6D5A3E,#4A3728)">
+          <span class="galleria-ph-label">San Teodoro</span>
+        </div>
+      </div>
+      <div class="galleria-item-placeholder reveal reveal-delay-2" data-sito="san-teodoro">
+        <div class="galleria-ph" style="height:280px;background:linear-gradient(135deg,#9C8060,#6B4F3A)">
+          <span class="galleria-ph-label">San Teodoro</span>
+        </div>
+      </div>
+
+      <!-- Placeholder Apollonia -->
+      <div class="galleria-item-placeholder reveal" data-sito="apollonia">
+        <div class="galleria-ph" style="height:200px;background:linear-gradient(135deg,#5B7A4E,#3D5C34)">
+          <span class="galleria-ph-label">Apollonia</span>
+        </div>
+      </div>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="apollonia">
+        <div class="galleria-ph" style="height:300px;background:linear-gradient(135deg,#4A7060,#2E5040)">
+          <span class="galleria-ph-label">Apollonia</span>
+        </div>
+      </div>
+
+      <!-- Placeholder Monte San Fratello -->
+      <div class="galleria-item-placeholder reveal" data-sito="monte-san-fratello">
+        <div class="galleria-ph" style="height:240px;background:linear-gradient(135deg,#2B5F8C,#1A3D6B)">
+          <span class="galleria-ph-label">Monte San Fratello</span>
+        </div>
+      </div>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="monte-san-fratello">
+        <div class="galleria-ph" style="height:180px;background:linear-gradient(135deg,#1E4A7A,#12305A)">
+          <span class="galleria-ph-label">Monte San Fratello</span>
+        </div>
+      </div>
+      <div class="galleria-item-placeholder reveal reveal-delay-2" data-sito="monte-san-fratello">
+        <div class="galleria-ph" style="height:250px;background:linear-gradient(135deg,#3068A0,#1C4878)">
+          <span class="galleria-ph-label">Monte San Fratello</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AVVISO VUOTO -->
+    <div class="placeholder-vuoto reveal" style="margin-top:2rem">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <p>Le fotografie saranno caricate durante il corso dell'anno</p>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-logo-wrap">
+      <img src="../assets/img/logo-scuola.svg" alt="Logo scuola" class="footer-logo">
+      <span class="footer-nome">Istituto Comprensivo Acquedolci</span>
+    </div>
+    <div class="footer-arco">
+      <span style="background:#D4841E"></span>
+      <span style="background:#4BA535"></span>
+      <span style="background:#2196F3"></span>
+    </div>
+    <p class="footer-credits">Progetto Memorie del Territorio &mdash; Acquedolci (ME)</p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function filtra(sito, btn) {
+      document.querySelectorAll('.filtro-btn').forEach(b => {
+        b.className = 'filtro-btn';
+      });
+      const colorClass = btn.dataset.color ? `attivo-${btn.dataset.color}` : 'attivo';
+      btn.classList.add(colorClass);
+
+      document.querySelectorAll('.galleria-item-placeholder').forEach(item => {
+        if (sito === 'tutti' || item.dataset.sito === sito) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function apriLightbox(src, alt) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = alt || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function chiudiLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') chiudiLightbox();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Configurazione Netlify — sito statico (HTML/CSS/JS puro)
+# Nessun passaggio di build: i file vengono pubblicati così come sono.
+
+[build]
+  publish = "."
+
+# Pagina 404 personalizzata (se in futuro ne aggiungi una, crea 404.html nella root)
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache lunga per asset statici (immagini, font, css, js versionati)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

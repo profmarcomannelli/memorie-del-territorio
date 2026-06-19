@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="counter-clip">
+      <ellipse cx="96" cy="97" rx="11.5" ry="10.5"/>
+    </clipPath>
+    <path id="text-arc" d="M100,100 m-84,0 a84,84 0 0,0 168,0"/>
+  </defs>
+
+  <!-- Arco arancione esterno: R=72÷58, da 45° a 315° in senso orario (270°) -->
+  <path d="M150.9,150.9 A72,72 0 1,1 150.9,49.1 L141.0,58.97 A58,58 0 1,0 141.0,141.03 Z" fill="#D4841E"/>
+
+  <!-- Arco verde: R=58÷46, da 50° a 310° in senso orario (260°) -->
+  <path d="M137.3,144.4 A58,58 0 1,1 137.3,55.6 L129.6,64.8 A46,46 0 1,0 129.6,135.2 Z" fill="#4BA535"/>
+
+  <!-- Cerchio blu principale -->
+  <circle cx="100" cy="100" r="46" fill="#2196F3"/>
+
+  <!-- Forma bianca della lettera "a" -->
+  <!-- Disco del tegame (bowl) -->
+  <circle cx="96" cy="97" r="18.5" fill="white"/>
+  <!-- Gamba destra (stem) -->
+  <rect x="112" y="79" width="9" height="46" rx="2.5" fill="white"/>
+  <!-- Connettore superiore tra tegame e gamba -->
+  <rect x="94" y="79" width="19" height="7" fill="white"/>
+  <!-- Barra inferiore -->
+  <rect x="78" y="115" width="44" height="9" rx="2.5" fill="white"/>
+  <!-- Parete sinistra sotto il tegame -->
+  <rect x="78" y="97" width="7" height="27" fill="white"/>
+
+  <!-- Paesaggio nel controcampo (counter) della "a" -->
+  <g clip-path="url(#counter-clip)">
+    <!-- Cielo -->
+    <rect x="84" y="86" width="24" height="24" fill="#AECDE0"/>
+    <!-- Montagna sfondo -->
+    <path d="M84,107 L89,99 L94,103 L99,95 L103,100 L107,95 L107,112 L84,112 Z" fill="#8A7A65"/>
+    <!-- Silouette città -->
+    <path d="M84,108 L87,104 L89,106 L92,101 L95,104 L98,98 L101,102 L104,98 L106,101 L107,99 L107,112 L84,112 Z" fill="#1C2035" opacity="0.9"/>
+  </g>
+
+  <!-- Testo circolare esterno -->
+  <text font-size="6.8" fill="#1A1A2E" font-family="Arial, Helvetica, sans-serif" letter-spacing="1.9" font-weight="500">
+    <textPath href="#text-arc" startOffset="7%">ISTITUTO COMPRENSIVO   ·   ACQUEDOLCI</textPath>
+  </text>
+</svg>

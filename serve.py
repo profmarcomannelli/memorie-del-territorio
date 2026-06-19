@@ -1,0 +1,5 @@
+import os, sys
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+sys.argv = ['server']
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+HTTPServer(('', 3456), SimpleHTTPRequestHandler).serve_forever()

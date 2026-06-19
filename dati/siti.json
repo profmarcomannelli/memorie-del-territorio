@@ -1,0 +1,41 @@
+[
+  {
+    "id": "grotta-san-teodoro",
+    "nome": "Grotta di San Teodoro",
+    "sottotitolo": "Paleolitico superiore — Acquedolci (ME)",
+    "descrizione": "La Grotta di San Teodoro è uno dei siti paleolitici più importanti della Sicilia. Conserva tracce di presenza umana risalenti a oltre 14.000 anni fa.",
+    "coordinate": [38.052, 14.578],
+    "periodo": "Paleolitico superiore",
+    "comune": "Acquedolci",
+    "provincia": "Messina",
+    "copertina": "assets/img/san-teodoro-placeholder.jpg",
+    "galleria": [],
+    "podcast": []
+  },
+  {
+    "id": "apollonia",
+    "nome": "Apollonia",
+    "sottotitolo": "Età greca e romana — area del Messinese",
+    "descrizione": "Sito archeologico di epoca greca e romana, ancora in fase di studio e valorizzazione.",
+    "coordinate": [38.1, 14.7],
+    "periodo": "Età greca e romana",
+    "comune": "Da definire",
+    "provincia": "Messina",
+    "copertina": "assets/img/apollonia-placeholder.jpg",
+    "galleria": [],
+    "podcast": []
+  },
+  {
+    "id": "monte-san-fratello",
+    "nome": "Monte San Fratello",
+    "sottotitolo": "Medioevo — San Fratello (ME)",
+    "descrizione": "Monte San Fratello custodisce stratificazioni storiche che vanno dal periodo greco-romano fino al Medioevo normanno.",
+    "coordinate": [38.003, 14.601],
+    "periodo": "Medioevo normanno",
+    "comune": "San Fratello",
+    "provincia": "Messina",
+    "copertina": "assets/img/monte-san-fratello-placeholder.jpg",
+    "galleria": [],
+    "podcast": []
+  }
+]

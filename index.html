@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memorie del Territorio — Istituto Comprensivo Acquedolci</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="header-brand">
+      <img src="assets/img/logo-scuola.svg" alt="Istituto Comprensivo Acquedolci" class="header-logo">
+      <div class="header-titles">
+        <span class="header-scuola">Istituto Comprensivo Acquedolci</span>
+        <span class="header-progetto">Memorie del Territorio</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="mappa.html">Mappa</a></li>
+        <li><a href="podcast/index.html">Podcast</a></li>
+        <li><a href="galleria/index.html">Galleria</a></li>
+        <li><a href="dietro-le-quinte/index.html">Dietro le quinte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Istituto Comprensivo Acquedolci</p>
+      <h1 class="hero-title">Memorie<br><em>del Territorio</em></h1>
+      <p class="hero-subtitle">Grotte, città antiche e borghi medievali — il passato vive ancora</p>
+      <div class="hero-arc">
+        <div class="arc-dot d1"></div>
+        <div class="arc-dot d2"></div>
+        <div class="arc-dot d3"></div>
+      </div>
+    </div>
+
+    <!-- Silhouette territorio ispirata al logo della scuola -->
+    <svg class="hero-silhouette" viewBox="0 0 1440 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <!-- Montagne sfondo -->
+      <path d="M0,180 L80,140 L160,160 L280,90 L380,130 L460,100
+               L560,120 L660,60 L760,100 L860,80 L960,110
+               L1060,70 L1160,100 L1280,120 L1380,90 L1440,110 L1440,220 L0,220 Z"
+            fill="#0D3B6E" opacity="0.6"/>
+      <!-- Colline medie -->
+      <path d="M0,195 L60,175 L140,185 L220,165 L320,175 L420,155
+               L520,170 L620,150 L720,165 L820,145 L920,160
+               L1020,148 L1120,162 L1220,152 L1340,168 L1440,155 L1440,220 L0,220 Z"
+            fill="#1565C0" opacity="0.5"/>
+      <!-- Profilo città -->
+      <path d="M520,200 L520,182 L528,182 L528,170 L536,170 L536,164
+               L542,164 L542,158 L548,158 L548,164 L556,164 L556,170
+               L562,170 L562,174 L568,174 L568,168 L574,168 L574,174
+               L582,174 L582,162 L588,162 L588,158 L592,158 L592,162
+               L600,162 L600,156 L604,156 L604,152 L608,152 L608,156
+               L614,156 L614,148 L618,148 L618,144 L622,144 L622,148
+               L628,148 L628,155 L634,155 L634,162 L640,162 L640,168
+               L648,168 L648,164 L656,164 L656,170 L664,170 L664,176
+               L672,176 L672,180 L680,180 L680,188 L690,188 L690,182
+               L700,182 L700,176 L708,176 L708,182 L718,182 L718,188
+               L730,188 L730,200 Z"
+            fill="#1C2035" opacity="0.9"/>
+      <!-- Torre campanile -->
+      <path d="M608,152 L608,130 L610,128 L622,128 L624,130 L624,148 L622,148 L622,144 L618,144 L618,148 L614,148 Z"
+            fill="#1C2035" opacity="0.9"/>
+      <rect x="612" y="124" width="8" height="6" rx="4" fill="#1C2035" opacity="0.9"/>
+      <!-- Mare -->
+      <path d="M0,210 Q360,202 720,208 Q1080,214 1440,206 L1440,220 L0,220 Z"
+            fill="#2196F3" opacity="0.35"/>
+    </svg>
+
+    <p class="hero-scroll">Scorri per esplorare ↓</p>
+  </section>
+
+  <!-- SITI -->
+  <section class="section">
+    <p class="section-label">I luoghi del progetto</p>
+    <h2 class="section-title">Siti e reperti<br>del nostro territorio</h2>
+    <p class="section-intro">
+      Dalla preistoria al Medioevo normanno, il territorio di Acquedolci e dei Nebrodi
+      custodisce tracce straordinarie dell'umanità. Ogni sito racconta una storia diversa.
+    </p>
+    <div class="siti-grid" id="griglia-siti">
+      <!-- Popolato via JS da dati/siti.json -->
+    </div>
+  </section>
+
+  <!-- DIVISORE -->
+  <div class="divisore-territorio">
+    <p class="divisore-quote">
+      "La memoria di un territorio è la radice da cui nasce l'identità di chi lo abita."
+    </p>
+  </div>
+
+  <!-- SEZIONI SECONDARIE -->
+  <section class="section">
+    <p class="section-label">Esplora il progetto</p>
+    <h2 class="section-title">Tutto il materiale<br>raccolto dai ragazzi</h2>
+    <div class="sezioni-grid">
+      <a href="mappa.html" class="sezione-link blu">
+        <span class="sezione-icona">🗺</span>
+        <span class="sezione-nome">Mappa interattiva</span>
+        <span class="sezione-desc">Tutti i siti georeferenziati su una mappa esplorabile.</span>
+      </a>
+      <a href="podcast/index.html" class="sezione-link bosco verde">
+        <span class="sezione-icona">🎙</span>
+        <span class="sezione-nome">Podcast</span>
+        <span class="sezione-desc">Le voci degli studenti raccontano storia e scoperte.</span>
+      </a>
+      <a href="galleria/index.html" class="sezione-link terra">
+        <span class="sezione-icona">📷</span>
+        <span class="sezione-nome">Galleria fotografica</span>
+        <span class="sezione-desc">Immagini dai siti, dai reperti e dalle uscite sul campo.</span>
+      </a>
+      <a href="dietro-le-quinte/index.html" class="sezione-link notte">
+        <span class="sezione-icona">🎬</span>
+        <span class="sezione-nome">Dietro le quinte</span>
+        <span class="sezione-desc">Il backstage del progetto: come è nato, come si è evoluto.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-logo-wrap">
+      <img src="assets/img/logo-scuola.svg" alt="Logo scuola" class="footer-logo">
+      <span class="footer-nome">Istituto Comprensivo Acquedolci</span>
+    </div>
+    <div class="footer-arco">
+      <span style="background:#D4841E"></span>
+      <span style="background:#4BA535"></span>
+      <span style="background:#2196F3"></span>
+    </div>
+    <p class="footer-credits">Progetto Memorie del Territorio &mdash; Acquedolci (ME)</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
