@@ -635,6 +635,66 @@ html { transition: opacity 0.45s ease; }
   width: 64px; height: 64px; opacity: 0.26;
 }
 
+/* ── ICONE SEZIONI (disegnate a mano) ── */
+.sezione-icona svg {
+  width: 34px; height: 34px; display: block;
+  fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ── BOX "LO SAPEVI?" ── */
+.lo-sapevi {
+  position: relative;
+  transform: rotate(-0.5deg);
+  padding: 1.5rem 1.6rem;
+  border-radius: 2px;
+  color: #3A4A2E;
+  background:
+    repeating-linear-gradient(transparent 0 28px, rgba(28, 32, 53, 0.06) 28px 29px),
+    #EFF4E2;
+  border: 0.5px solid #D5E0BE;
+  box-shadow: 0 8px 20px rgba(28, 32, 53, 0.12);
+  margin: 2rem 0;
+}
+.lo-sapevi-nastro {
+  position: absolute; top: -11px; left: 30px;
+  width: 96px; height: 22px; transform: rotate(-4deg);
+  background: rgba(212, 160, 90, 0.34); border: 0.5px solid rgba(150, 110, 50, 0.22);
+}
+.lo-sapevi-head { display: flex; align-items: center; gap: 10px; margin-bottom: 0.3rem; }
+.lo-sapevi-head svg {
+  width: 26px; height: 26px; flex: none;
+  fill: none; stroke: var(--terra); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+}
+.lo-sapevi-titolo {
+  font-family: 'Caveat', cursive; font-weight: 600;
+  font-size: 1.9rem; line-height: 1; color: #B07A2E;
+}
+.lo-sapevi-testo {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem; line-height: 1.75rem; color: #3A4A2E; max-width: 52ch;
+}
+
+/* ── POST-IT ── */
+.postit {
+  position: relative; display: inline-block;
+  width: 210px; min-height: 150px; padding: 1.2rem 1.1rem;
+  margin: 1.5rem 0;
+  box-shadow: 3px 7px 16px rgba(28, 32, 53, 0.20);
+  font-family: 'Caveat', cursive; font-size: 1.4rem; line-height: 1.7rem;
+}
+.postit.giallo  { background: #FCE98A; color: #5A4A12; transform: rotate(-3deg); }
+.postit.azzurro { background: #BFE0F2; color: #20384A; transform: rotate(2.5deg); }
+.postit.verde   { background: #D6EBB0; color: #3A4A2E; transform: rotate(-1.5deg); }
+.postit .corner {
+  position: absolute; right: 0; bottom: 0; width: 24px; height: 24px;
+  background: rgba(0, 0, 0, 0.10); clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+.postit-puntina {
+  position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #E24B4A; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
 /* ── MASONRY GALLERY ── */
 .galleria-grid { columns: 3 260px; gap: 1rem; }
 .galleria-item {
