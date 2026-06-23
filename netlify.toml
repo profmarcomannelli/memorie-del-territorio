@@ -13,8 +13,10 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Cache lunga per asset statici (immagini, font, css, js versionati)
+# Asset sempre rivalidati: il browser controlla se sono cambiati a ogni visita
+# (con ETag → risposta 304 veloce se invariati). Così le modifiche a CSS/JS si
+# vedono subito, senza dover svuotare la cache.
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=0, must-revalidate"
