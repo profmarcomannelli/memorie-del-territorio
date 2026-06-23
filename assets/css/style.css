@@ -788,6 +788,17 @@ html { transition: opacity 0.45s ease; }
   letter-spacing: 4px;
   fill: rgba(255, 255, 255, 0.82);
 }
+.inner-hero.has-brush .brush-credit {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.35rem;
+}
+.inner-hero.has-brush .brush-credit a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+}
 @media (max-width: 760px) {
   .inner-hero.has-brush { padding: 5rem 0.75rem 2.5rem; }
   .brush-ph-text { font-size: 26px; }
