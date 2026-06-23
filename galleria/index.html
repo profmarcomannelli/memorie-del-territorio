@@ -30,6 +30,7 @@
     .filtro-btn.attivo-terra  { background: var(--terra); border-color: var(--terra); color: white; }
     .filtro-btn.attivo-verde  { background: var(--bosco); border-color: var(--bosco); color: white; }
     .filtro-btn.attivo-blu    { background: var(--cielo); border-color: var(--cielo); color: white; }
+    .filtro-btn.attivo-viola  { background: #7B5EA7; border-color: #7B5EA7; color: white; }
 
     .galleria-item-placeholder {
       break-inside: avoid;
@@ -112,57 +113,60 @@
     <!-- FILTRI -->
     <div class="filtri reveal reveal-delay-2">
       <button class="filtro-btn attivo" onclick="filtra('tutti', this)">Tutti</button>
-      <button class="filtro-btn" onclick="filtra('san-teodoro', this)" data-color="terra">Grotta di San Teodoro</button>
-      <button class="filtro-btn" onclick="filtra('apollonia', this)" data-color="verde">Apollonia</button>
-      <button class="filtro-btn" onclick="filtra('monte-san-fratello', this)" data-color="blu">Monte San Fratello</button>
+      <button class="filtro-btn" onclick="filtra('centro-urbano-acquedolci', this)" data-color="blu">Centro urbano</button>
+      <button class="filtro-btn" onclick="filtra('castello-barone-cupane', this)" data-color="verde">Castello Barone Cupane</button>
+      <button class="filtro-btn" onclick="filtra('castello-di-giorgio', this)" data-color="terra">Castello Di Giorgio</button>
+      <button class="filtro-btn" onclick="filtra('chiesa-san-giacomo-maggiore', this)" data-color="viola">Chiesa San Giacomo</button>
     </div>
 
     <!-- GRIGLIA placeholder — sarà popolata da JSON -->
     <div class="galleria-grid" id="griglia-galleria">
 
-      <!-- Placeholder San Teodoro -->
-      <div class="galleria-item-placeholder reveal" data-sito="san-teodoro">
-        <div class="galleria-ph" style="height:220px;background:linear-gradient(135deg,#8B7355,#5C4033)">
-          <span class="galleria-ph-label">San Teodoro</span>
+      <!-- Placeholder Centro urbano -->
+      <div class="galleria-item-placeholder reveal" data-sito="centro-urbano-acquedolci">
+        <div class="galleria-ph" style="height:220px;background:linear-gradient(135deg,#3B82C4,#1E4E84)">
+          <span class="galleria-ph-label">Centro urbano</span>
         </div>
       </div>
-      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="san-teodoro">
-        <div class="galleria-ph" style="height:160px;background:linear-gradient(135deg,#6D5A3E,#4A3728)">
-          <span class="galleria-ph-label">San Teodoro</span>
-        </div>
-      </div>
-      <div class="galleria-item-placeholder reveal reveal-delay-2" data-sito="san-teodoro">
-        <div class="galleria-ph" style="height:280px;background:linear-gradient(135deg,#9C8060,#6B4F3A)">
-          <span class="galleria-ph-label">San Teodoro</span>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="centro-urbano-acquedolci">
+        <div class="galleria-ph" style="height:170px;background:linear-gradient(135deg,#2F6FAE,#143B66)">
+          <span class="galleria-ph-label">Centro urbano</span>
         </div>
       </div>
 
-      <!-- Placeholder Apollonia -->
-      <div class="galleria-item-placeholder reveal" data-sito="apollonia">
-        <div class="galleria-ph" style="height:200px;background:linear-gradient(135deg,#5B7A4E,#3D5C34)">
-          <span class="galleria-ph-label">Apollonia</span>
+      <!-- Placeholder Castello Barone Cupane -->
+      <div class="galleria-item-placeholder reveal" data-sito="castello-barone-cupane">
+        <div class="galleria-ph" style="height:200px;background:linear-gradient(135deg,#5B9C46,#2E5E2A)">
+          <span class="galleria-ph-label">Castello Barone Cupane</span>
         </div>
       </div>
-      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="apollonia">
-        <div class="galleria-ph" style="height:300px;background:linear-gradient(135deg,#4A7060,#2E5040)">
-          <span class="galleria-ph-label">Apollonia</span>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="castello-barone-cupane">
+        <div class="galleria-ph" style="height:280px;background:linear-gradient(135deg,#4A8A38,#244B1E)">
+          <span class="galleria-ph-label">Castello Barone Cupane</span>
         </div>
       </div>
 
-      <!-- Placeholder Monte San Fratello -->
-      <div class="galleria-item-placeholder reveal" data-sito="monte-san-fratello">
-        <div class="galleria-ph" style="height:240px;background:linear-gradient(135deg,#2B5F8C,#1A3D6B)">
-          <span class="galleria-ph-label">Monte San Fratello</span>
+      <!-- Placeholder Castello Di Giorgio -->
+      <div class="galleria-item-placeholder reveal" data-sito="castello-di-giorgio">
+        <div class="galleria-ph" style="height:240px;background:linear-gradient(135deg,#C98A3A,#6B4A23)">
+          <span class="galleria-ph-label">Castello Di Giorgio</span>
         </div>
       </div>
-      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="monte-san-fratello">
-        <div class="galleria-ph" style="height:180px;background:linear-gradient(135deg,#1E4A7A,#12305A)">
-          <span class="galleria-ph-label">Monte San Fratello</span>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="castello-di-giorgio">
+        <div class="galleria-ph" style="height:180px;background:linear-gradient(135deg,#B0762B,#5C3D1E)">
+          <span class="galleria-ph-label">Castello Di Giorgio</span>
         </div>
       </div>
-      <div class="galleria-item-placeholder reveal reveal-delay-2" data-sito="monte-san-fratello">
-        <div class="galleria-ph" style="height:250px;background:linear-gradient(135deg,#3068A0,#1C4878)">
-          <span class="galleria-ph-label">Monte San Fratello</span>
+
+      <!-- Placeholder Chiesa San Giacomo -->
+      <div class="galleria-item-placeholder reveal" data-sito="chiesa-san-giacomo-maggiore">
+        <div class="galleria-ph" style="height:200px;background:linear-gradient(135deg,#8B6FB5,#4A3870)">
+          <span class="galleria-ph-label">Chiesa San Giacomo</span>
+        </div>
+      </div>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="chiesa-san-giacomo-maggiore">
+        <div class="galleria-ph" style="height:290px;background:linear-gradient(135deg,#6F549B,#3C2C57)">
+          <span class="galleria-ph-label">Chiesa San Giacomo</span>
         </div>
       </div>
 
