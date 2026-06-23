@@ -635,11 +635,10 @@ html { transition: opacity 0.45s ease; }
   width: 64px; height: 64px; opacity: 0.26;
 }
 
-/* ── ICONE SEZIONI (disegnate a mano) ── */
-.sezione-icona svg {
-  width: 34px; height: 34px; display: block;
-  fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
-}
+/* ── ICONE SEZIONI (Phosphor, riempimento via currentColor) ── */
+.sezione-icona svg { width: 38px; height: 38px; display: block; }
+/* icona-simbolo accanto ai titoli di sezione */
+.titolo-icona { width: 30px; height: 30px; display: inline-block; vertical-align: -4px; margin-right: 0.5rem; }
 
 /* ── BOX "LO SAPEVI?" ── */
 .lo-sapevi {
