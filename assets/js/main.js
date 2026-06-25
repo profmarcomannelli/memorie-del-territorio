@@ -133,10 +133,13 @@ async function caricaSiti() {
       return `
         <a href="siti/${sito.id}.html" class="sito-card reveal reveal-delay-${i}">
           <div class="sito-card-img" style="background:${c}18">
+            <img class="sito-card-foto" src="${sito.copertina}" alt="Disegno del luogo: ${sito.nome}" loading="lazy"
+                 onload="this.parentElement.classList.add('has-foto')" onerror="this.remove()">
             <svg class="card-pin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="${c}"/>
               <circle cx="12" cy="9" r="2.5" fill="white"/>
             </svg>
+            <span class="card-pin-badge" style="background:${c}" aria-hidden="true"></span>
           </div>
           <div class="sito-card-stripe" style="background:${c}"></div>
           <div class="sito-card-body">

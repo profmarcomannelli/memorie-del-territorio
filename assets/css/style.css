@@ -268,6 +268,32 @@ body {
   opacity: 0.5;
 }
 
+/* Disegno dei ragazzi come copertina — si adatta a QUALSIASI formato
+   (verticale, orizzontale, quadrato): mostrato per intero, mai tagliato. */
+.sito-card-foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  z-index: 1;
+}
+/* quando c'è il disegno: via il pin grande centrale, resta un mini-pin d'angolo */
+.sito-card-img.has-foto .card-pin { display: none; }
+.card-pin-badge {
+  display: none;
+  position: absolute;
+  top: 10px; right: 10px;
+  z-index: 2;
+  width: 14px; height: 14px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(28, 32, 53, 0.30);
+}
+.sito-card-img.has-foto .card-pin-badge { display: block; }
+
 .sito-card-stripe {
   height: 3px;
 }

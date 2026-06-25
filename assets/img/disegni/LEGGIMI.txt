@@ -1,0 +1,24 @@
+DISEGNI DEI RAGAZZI — copertine dei luoghi
+==========================================
+
+Metti qui i disegni fatti dai ragazzi sul posto. Compariranno
+automaticamente come copertina della card in homepage (e si possono
+usare anche nelle pagine dei luoghi).
+
+NOMI DEI FILE (devono corrispondere esattamente, in minuscolo):
+  marina-vecchia.jpg
+  castello-barone-cupane.jpg
+  grotta-san-teodoro.jpg
+  residenza-di-giorgio.jpg
+  chiesa-san-giacomo-maggiore.jpg
+
+FORMATO:
+  - Va bene QUALSIASI formato (verticale, orizzontale, quadrato):
+    il disegno viene mostrato sempre per intero, mai tagliato.
+  - Formati accettati: .jpg (consigliato) o .png — se usi .png,
+    cambia l'estensione nel file dati/siti.json (campo "copertina").
+  - Consigli: foto dritta, ben illuminata, sfondo del foglio pulito.
+    Dimensione consigliata: lato lungo circa 1000-1600 px.
+
+Finché un disegno non c'è, la card mostra il segnaposto colorato
+attuale (niente "buchi").

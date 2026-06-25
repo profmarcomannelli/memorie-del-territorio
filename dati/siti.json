@@ -8,7 +8,7 @@
     "periodo": "Centro storico",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/marina-vecchia-placeholder.jpg",
+    "copertina": "assets/img/disegni/marina-vecchia.jpg",
     "galleria": [],
     "podcast": []
   },
@@ -21,7 +21,7 @@
     "periodo": "Castello storico",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/castello-barone-cupane-placeholder.jpg",
+    "copertina": "assets/img/disegni/castello-barone-cupane.jpg",
     "galleria": [],
     "podcast": []
   },
@@ -34,7 +34,7 @@
     "periodo": "Sito archeologico",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/grotta-san-teodoro-placeholder.jpg",
+    "copertina": "assets/img/disegni/grotta-san-teodoro.jpg",
     "galleria": [],
     "podcast": []
   },
@@ -47,7 +47,7 @@
     "periodo": "Residenza storica",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/residenza-di-giorgio-placeholder.jpg",
+    "copertina": "assets/img/disegni/residenza-di-giorgio.jpg",
     "galleria": [],
     "podcast": []
   },
@@ -60,7 +60,7 @@
     "periodo": "Architettura religiosa",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/chiesa-san-giacomo-placeholder.jpg",
+    "copertina": "assets/img/disegni/chiesa-san-giacomo-maggiore.jpg",
     "galleria": [],
     "podcast": []
   }
