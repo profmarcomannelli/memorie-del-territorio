@@ -729,6 +729,55 @@ html { transition: opacity 0.45s ease; }
   font-size: 0.95rem; line-height: 1.15rem; opacity: 0.72;
 }
 
+/* ── PER APPROFONDIRE (rimando Pro Loco) ── */
+.approfondisci {
+  max-width: 740px;
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.3rem;
+  background: var(--bianco);
+  border-left: 4px solid var(--terra);
+  border-radius: 2px;
+  box-shadow: 0 2px 12px rgba(28, 32, 53, 0.06);
+}
+.approfondisci-testo { font-size: 0.95rem; line-height: 1.7; color: #555; margin-bottom: 0.6rem; }
+.approfondisci-link {
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--terra); text-decoration: none;
+}
+.approfondisci-link:hover { text-decoration: underline; }
+
+/* ── LINEA DEL TEMPO (timeline storica del territorio) ── */
+.timeline-luogo { max-width: 760px; margin-top: 1.5rem; }
+.tl-item {
+  position: relative;
+  padding: 0 0 1.6rem 1.8rem;
+  border-left: 2px solid var(--pietra);
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: ''; position: absolute; left: -7px; top: 3px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--pietra); border: 2px solid var(--pergamena);
+}
+.tl-epoca {
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 0.2rem;
+}
+.tl-titolo { font-family: var(--font-display); font-size: 1.05rem; color: var(--notte); margin-bottom: 0.25rem; }
+.tl-testo { font-size: 0.9rem; line-height: 1.6; color: #666; }
+.tl-item.is-luogo { border-left-color: var(--terra); }
+.tl-item.is-luogo::before {
+  background: var(--terra); width: 14px; height: 14px; left: -8px;
+  box-shadow: 0 0 0 4px rgba(212, 132, 30, 0.15);
+}
+.tl-item.is-luogo .tl-titolo { color: var(--terra); }
+.tl-badge {
+  display: inline-block; margin-left: 0.5rem;
+  font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #fff; background: var(--terra);
+  padding: 0.12rem 0.45rem; border-radius: 2px; vertical-align: middle;
+}
+
 /* ── MASONRY GALLERY ── */
 .galleria-grid { columns: 3 260px; gap: 1rem; }
 .galleria-item {

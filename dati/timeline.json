@@ -1,0 +1,74 @@
+[
+  {
+    "epoca": "~10.000 anni fa",
+    "titolo": "Thea nella Grotta di San Teodoro",
+    "testo": "Vive e viene sepolta nella grotta la donna oggi nota come «Thea»: è tra le testimonianze umane più antiche della Sicilia.",
+    "luoghi": ["grotta-san-teodoro"]
+  },
+  {
+    "epoca": "Intorno all'anno 1000",
+    "titolo": "I monaci Basiliani",
+    "testo": "Monaci in fuga dall'Oriente si rifugiano nella grotta e la dedicano al santo militare Teodoro.",
+    "luoghi": ["grotta-san-teodoro"]
+  },
+  {
+    "epoca": "1178",
+    "titolo": "Prima notizia della Chiesa di San Giacomo",
+    "testo": "La chiesa-ospizio per i pellegrini è citata in un documento e donata all'Abbazia di Maniace.",
+    "luoghi": ["chiesa-san-giacomo-maggiore"]
+  },
+  {
+    "epoca": "XV secolo",
+    "titolo": "Nascono la Marina vecchia e la torre",
+    "testo": "Attorno a una torre di avvistamento contro i pirati sorge il primo nucleo abitato: la Marina vecchia.",
+    "luoghi": ["marina-vecchia", "castello-barone-cupane"]
+  },
+  {
+    "epoca": "1449",
+    "titolo": "Un feudo che commercia via mare",
+    "testo": "Il feudo dispone già di un caricatore di frumento, una tonnara e un trappeto per i prodotti locali.",
+    "luoghi": ["castello-barone-cupane", "marina-vecchia"]
+  },
+  {
+    "epoca": "1498",
+    "titolo": "La Chiesa di San Giuseppe nel Castello",
+    "testo": "Viene fondata la chiesa custodita dentro il Castello Barone Cupane, parrocchia del borgo per secoli.",
+    "luoghi": ["castello-barone-cupane"]
+  },
+  {
+    "epoca": "Sei-Settecento",
+    "titolo": "Il castello diventa anche residenza",
+    "testo": "Accanto alla fortezza medievale cresce un'elegante residenza baronale.",
+    "luoghi": ["castello-barone-cupane"]
+  },
+  {
+    "epoca": "8 gennaio 1922",
+    "titolo": "La frana di San Fratello",
+    "testo": "Una frana distrugge gran parte di San Fratello: oltre 1.500 persone vengono trasferite verso la marina di Acquedolci.",
+    "luoghi": ["residenza-di-giorgio", "marina-vecchia"]
+  },
+  {
+    "epoca": "Anni '20 del Novecento",
+    "titolo": "Nasce la nuova Acquedolci",
+    "testo": "Il borgo è ridisegnato come «città-giardino»; sorge la Residenza Di Giorgio. Guida la rinascita il generale Antonino Di Giorgio.",
+    "luoghi": ["residenza-di-giorgio"]
+  },
+  {
+    "epoca": "1929",
+    "titolo": "La parrocchia lascia il castello",
+    "testo": "La Chiesa di San Giuseppe cessa di essere la parrocchia principale del borgo.",
+    "luoghi": ["castello-barone-cupane"]
+  },
+  {
+    "epoca": "Novecento",
+    "titolo": "I crolli del castello",
+    "testo": "Dopo gravi crolli e la perdita dei tetti restano soprattutto la torre e le mura perimetrali.",
+    "luoghi": ["castello-barone-cupane"]
+  },
+  {
+    "epoca": "2004",
+    "titolo": "Restauro della Chiesa di San Giuseppe",
+    "testo": "La chiesetta custodita nel castello viene restaurata.",
+    "luoghi": ["castello-barone-cupane"]
+  }
+]

@@ -157,6 +157,28 @@ async function caricaSiti() {
   }
 }
 
+// ── LINEA DEL TEMPO (pagine luogo) ──
+async function caricaTimeline() {
+  const cont = document.getElementById('timeline-luogo');
+  if (!cont) return;
+  const luogo = cont.dataset.luogo;
+  try {
+    const res = await fetch('../dati/timeline.json');
+    const eventi = await res.json();
+    cont.innerHTML = eventi.map(ev => {
+      const mine = Array.isArray(ev.luoghi) && ev.luoghi.includes(luogo);
+      return `
+        <div class="tl-item${mine ? ' is-luogo' : ''}">
+          <p class="tl-epoca">${ev.epoca}</p>
+          <h3 class="tl-titolo">${ev.titolo}${mine ? '<span class="tl-badge">questo luogo</span>' : ''}</h3>
+          <p class="tl-testo">${ev.testo}</p>
+        </div>`;
+    }).join('');
+  } catch (e) {
+    console.warn('Impossibile caricare timeline.json', e);
+  }
+}
+
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', () => {
   initPageTransition();
@@ -166,4 +188,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollHeader();
   initActiveNav();
   caricaSiti();
+  caricaTimeline();
 });
