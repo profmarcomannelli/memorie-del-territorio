@@ -697,6 +697,11 @@ html { transition: opacity 0.45s ease; }
   width: 14px; height: 14px; border-radius: 50%;
   background: #E24B4A; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
 }
+.postit-fonte {
+  display: block; margin-top: 0.6rem; padding-top: 0.45rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.20);
+  font-size: 0.95rem; line-height: 1.15rem; opacity: 0.72;
+}
 
 /* ── MASONRY GALLERY ── */
 .galleria-grid { columns: 3 260px; gap: 1rem; }
