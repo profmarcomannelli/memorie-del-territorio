@@ -30,7 +30,8 @@
     .filtro-btn.attivo-terra  { background: var(--terra); border-color: var(--terra); color: white; }
     .filtro-btn.attivo-verde  { background: var(--bosco); border-color: var(--bosco); color: white; }
     .filtro-btn.attivo-blu    { background: var(--cielo); border-color: var(--cielo); color: white; }
-    .filtro-btn.attivo-viola  { background: #7B5EA7; border-color: #7B5EA7; color: white; }
+    .filtro-btn.attivo-viola  { background: #1C2035; border-color: #1C2035; color: white; }
+    .filtro-btn.attivo-bluscuro { background: #1565C0; border-color: #1565C0; color: white; }
 
     .galleria-item-placeholder {
       break-inside: avoid;
@@ -114,24 +115,25 @@
     <!-- FILTRI -->
     <div class="filtri reveal reveal-delay-2">
       <button class="filtro-btn attivo" onclick="filtra('tutti', this)">Tutti</button>
-      <button class="filtro-btn" onclick="filtra('centro-urbano-acquedolci', this)" data-color="blu">Centro urbano</button>
+      <button class="filtro-btn" onclick="filtra('marina-vecchia', this)" data-color="blu">Marina vecchia</button>
       <button class="filtro-btn" onclick="filtra('castello-barone-cupane', this)" data-color="verde">Castello Barone Cupane</button>
-      <button class="filtro-btn" onclick="filtra('castello-di-giorgio', this)" data-color="terra">Castello Di Giorgio</button>
-      <button class="filtro-btn" onclick="filtra('chiesa-san-giacomo-maggiore', this)" data-color="viola">Chiesa San Giacomo</button>
+      <button class="filtro-btn" onclick="filtra('grotta-san-teodoro', this)" data-color="terra">Grotta San Teodoro</button>
+      <button class="filtro-btn" onclick="filtra('residenza-di-giorgio', this)" data-color="viola">Residenza Di Giorgio</button>
+      <button class="filtro-btn" onclick="filtra('chiesa-san-giacomo-maggiore', this)" data-color="bluscuro">Chiesa San Giacomo</button>
     </div>
 
     <!-- GRIGLIA placeholder — sarà popolata da JSON -->
     <div class="galleria-grid" id="griglia-galleria">
 
-      <!-- Placeholder Centro urbano -->
-      <div class="galleria-item-placeholder reveal" data-sito="centro-urbano-acquedolci">
+      <!-- Placeholder Marina vecchia -->
+      <div class="galleria-item-placeholder reveal" data-sito="marina-vecchia">
         <div class="galleria-ph" style="height:220px;background:linear-gradient(135deg,#3B82C4,#1E4E84)">
-          <span class="galleria-ph-label">Centro urbano</span>
+          <span class="galleria-ph-label">Marina vecchia</span>
         </div>
       </div>
-      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="centro-urbano-acquedolci">
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="marina-vecchia">
         <div class="galleria-ph" style="height:170px;background:linear-gradient(135deg,#2F6FAE,#143B66)">
-          <span class="galleria-ph-label">Centro urbano</span>
+          <span class="galleria-ph-label">Marina vecchia</span>
         </div>
       </div>
 
@@ -147,26 +149,38 @@
         </div>
       </div>
 
-      <!-- Placeholder Castello Di Giorgio -->
-      <div class="galleria-item-placeholder reveal" data-sito="castello-di-giorgio">
+      <!-- Placeholder Grotta di San Teodoro -->
+      <div class="galleria-item-placeholder reveal" data-sito="grotta-san-teodoro">
         <div class="galleria-ph" style="height:240px;background:linear-gradient(135deg,#C98A3A,#6B4A23)">
-          <span class="galleria-ph-label">Castello Di Giorgio</span>
+          <span class="galleria-ph-label">Grotta di San Teodoro</span>
         </div>
       </div>
-      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="castello-di-giorgio">
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="grotta-san-teodoro">
         <div class="galleria-ph" style="height:180px;background:linear-gradient(135deg,#B0762B,#5C3D1E)">
-          <span class="galleria-ph-label">Castello Di Giorgio</span>
+          <span class="galleria-ph-label">Grotta di San Teodoro</span>
+        </div>
+      </div>
+
+      <!-- Placeholder Residenza Di Giorgio -->
+      <div class="galleria-item-placeholder reveal" data-sito="residenza-di-giorgio">
+        <div class="galleria-ph" style="height:200px;background:linear-gradient(135deg,#3A4160,#1C2035)">
+          <span class="galleria-ph-label">Residenza Di Giorgio</span>
+        </div>
+      </div>
+      <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="residenza-di-giorgio">
+        <div class="galleria-ph" style="height:290px;background:linear-gradient(135deg,#2E3550,#141826)">
+          <span class="galleria-ph-label">Residenza Di Giorgio</span>
         </div>
       </div>
 
       <!-- Placeholder Chiesa San Giacomo -->
       <div class="galleria-item-placeholder reveal" data-sito="chiesa-san-giacomo-maggiore">
-        <div class="galleria-ph" style="height:200px;background:linear-gradient(135deg,#8B6FB5,#4A3870)">
+        <div class="galleria-ph" style="height:210px;background:linear-gradient(135deg,#2C6FB0,#0D3B6E)">
           <span class="galleria-ph-label">Chiesa San Giacomo</span>
         </div>
       </div>
       <div class="galleria-item-placeholder reveal reveal-delay-1" data-sito="chiesa-san-giacomo-maggiore">
-        <div class="galleria-ph" style="height:290px;background:linear-gradient(135deg,#6F549B,#3C2C57)">
+        <div class="galleria-ph" style="height:260px;background:linear-gradient(135deg,#1E5BA8,#0D3B6E)">
           <span class="galleria-ph-label">Chiesa San Giacomo</span>
         </div>
       </div>
@@ -194,7 +208,7 @@
       <span style="background:#4BA535"></span>
       <span style="background:#2196F3"></span>
     </div>
-    <p class="footer-credits">Progetto Memorie del Territorio &mdash; Acquedolci (ME)</p>
+    <p class="footer-credits">Progetto Memorie del Territorio &mdash; Acquedolci e San Fratello (ME)</p>
   </footer>
 
   <script src="../assets/js/main.js"></script>

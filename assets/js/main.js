@@ -126,7 +126,7 @@ async function caricaSiti() {
   try {
     const res = await fetch('dati/siti.json');
     const siti = await res.json();
-    const colori = ['#2196F3', '#4BA535', '#D4841E', '#7B5EA7'];
+    const colori = ['#2196F3', '#4BA535', '#D4841E', '#1C2035', '#1565C0'];
 
     griglia.innerHTML = siti.map((sito, i) => {
       const c = colori[i % colori.length];
