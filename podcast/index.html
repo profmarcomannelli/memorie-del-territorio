@@ -20,7 +20,6 @@
       <ul class="site-nav">
         <li><a href="../mappa.html">Mappa</a></li>
         <li><a href="index.html" class="active">Podcast</a></li>
-        <li><a href="../galleria/index.html">Galleria</a></li>
         <li><a href="../dietro-le-quinte/index.html">Dietro le quinte</a></li>
       </ul>
     </nav>
@@ -50,22 +49,20 @@
       Acquedolci: i ragazzi di Acquedolci e San Fratello raccontano i luoghi del territorio,
       le scoperte e cosa significa per loro il proprio paese. Verrà pubblicata su Spotify.
     </p>
-    <img class="illu-sezione illu-centro reveal reveal-delay-2" src="../assets/img/illustrazioni/podcast.svg" alt="Illustrazione di ragazzi che registrano un podcast al microfono">
+    <img class="illu-sezione illu-centro reveal reveal-delay-2" style="border-radius:14px;box-shadow:0 18px 30px rgba(0,0,0,0.25)" src="../assets/img/podcast/copertina.png" alt="Copertina del podcast: History Lab — Memorie del Territorio, I.C. Acquedolci">
 
     <div class="podcast-episodi" id="lista-episodi">
 
       <!-- Episodio unico (puntata corale) -->
       <div class="podcast-ep reveal" style="border-color:var(--terra)">
-        <span class="podcast-ep-num" style="color:var(--terra)">Episodio in arrivo</span>
+        <span class="podcast-ep-num" style="color:var(--terra)">Episodio 1</span>
         <h3 class="podcast-ep-titolo">Memorie del Territorio &mdash; la nostra puntata</h3>
         <p class="podcast-ep-desc">
           Una puntata corale: i ragazzi di Acquedolci e San Fratello si presentano in
           gallo-italico e raccontano i luoghi del territorio, le scoperte e cosa significa
           per loro il proprio paese.
         </p>
-        <div class="placeholder-vuoto" style="padding:1.5rem;margin-bottom:0">
-          <p style="font-size:0.85rem">L'episodio sarà disponibile qui dopo la registrazione</p>
-        </div>
+        <iframe style="border-radius:12px;margin-top:0.5rem" src="https://open.spotify.com/embed/episode/38n6nukTS3IsS7I9cYaez4?utm_source=generator" width="100%" height="232" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Memorie del Territorio, episodio 1"></iframe>
       </div>
 
     </div>
@@ -74,9 +71,10 @@
     <div style="background:var(--notte);border-radius:2px;padding:2rem;margin-top:3rem;" class="reveal">
       <p style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);margin-bottom:0.5rem;">Come aggiornare i podcast</p>
       <p style="color:var(--pietra);font-size:0.9rem;line-height:1.7;opacity:0.8;">
-        Una volta pubblicato l'episodio su Spotify, copia il link del player embed
-        e sostituiscilo nel file <code style="background:rgba(255,255,255,0.1);padding:0.1em 0.4em;border-radius:2px;font-family:var(--font-mono);font-size:0.85em;">dati/podcast.json</code>.
-        L'episodio apparirà automaticamente su questa pagina.
+        Per aggiungere un nuovo episodio: copia il codice embed da Spotify (pulsante
+        Condividi &rarr; Incorpora episodio) e aggiungi un nuovo blocco
+        <code style="background:rgba(255,255,255,0.1);padding:0.1em 0.4em;border-radius:2px;font-family:var(--font-mono);font-size:0.85em;">.podcast-ep</code>
+        in questo file, come quello dell'Episodio 1.
       </p>
     </div>
   </section>

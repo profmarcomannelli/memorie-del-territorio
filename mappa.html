@@ -90,6 +90,7 @@
       try {
         const res = await fetch('dati/siti.json');
         const siti = await res.json();
+        const markers = [];
 
         siti.forEach((sito, i) => {
           const color = colori[i % colori.length];
@@ -147,8 +148,13 @@
                 <a href="siti/${sito.id}.html" class="popup-btn">Vai al sito →</a>
               </div>`);
 
-          L.marker(sito.coordinate, { icon }).addTo(map).bindPopup(popup);
+          const marker = L.marker(sito.coordinate, { icon }).addTo(map).bindPopup(popup);
+          markers.push(marker);
         });
+
+        if (markers.length) {
+          map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [40, 40], maxZoom: 14 });
+        }
       } catch (e) {
         console.warn('Errore caricamento siti:', e);
       }
