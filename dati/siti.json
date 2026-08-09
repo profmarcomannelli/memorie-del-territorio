@@ -8,7 +8,7 @@
     "periodo": "Centro storico",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/disegni/marina-vecchia.jpg",
+    "copertina": "assets/img/disegni/marina-vecchia.jpg?v=2",
     "galleria": [],
     "podcast": []
   },
@@ -21,7 +21,7 @@
     "periodo": "Castello storico",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/disegni/castello-barone-cupane.jpg",
+    "copertina": "assets/img/disegni/castello-barone-cupane.jpg?v=2",
     "galleria": [],
     "podcast": []
   },
@@ -47,7 +47,7 @@
     "periodo": "Residenza storica",
     "comune": "Acquedolci",
     "provincia": "Messina",
-    "copertina": "assets/img/disegni/residenza-di-giorgio.jpg",
+    "copertina": "assets/img/disegni/residenza-di-giorgio.jpg?v=2",
     "galleria": [],
     "podcast": []
   },
@@ -61,6 +61,45 @@
     "comune": "Acquedolci",
     "provincia": "Messina",
     "copertina": "assets/img/disegni/chiesa-san-giacomo-maggiore.jpg",
+    "galleria": [],
+    "podcast": []
+  },
+  {
+    "id": "san-fratello-centro-storico",
+    "nome": "Centro storico",
+    "sottotitolo": "Borgo medievale — San Fratello (ME)",
+    "descrizione": "L'antico borgo sui Nebrodi, isola linguistica gallo-italica fondata dai coloni normanni. Da qui, dopo la frana del 1922, nacque Acquedolci.",
+    "coordinate": [38.0154, 14.5978],
+    "periodo": "Borgo medievale",
+    "comune": "San Fratello",
+    "provincia": "Messina",
+    "copertina": "assets/img/disegni/san-fratello-centro-storico.jpg",
+    "galleria": [],
+    "podcast": []
+  },
+  {
+    "id": "bosco-san-fratello",
+    "nome": "Bosco",
+    "sottotitolo": "Parco dei Nebrodi — San Fratello (ME)",
+    "descrizione": "Le foreste dei Nebrodi che circondano San Fratello, dove il cavallo Sanfratellano vive allo stato brado da oltre mille anni.",
+    "coordinate": [38.01, 14.58],
+    "periodo": "Patrimonio naturale",
+    "comune": "San Fratello",
+    "provincia": "Messina",
+    "copertina": "assets/img/disegni/bosco-san-fratello.jpg",
+    "galleria": [],
+    "podcast": []
+  },
+  {
+    "id": "convento-santa-maria-di-gesu",
+    "nome": "Ex convento di S. Maria di Gesù",
+    "sottotitolo": "San Fratello (ME)",
+    "descrizione": "Ex convento francescano del Cinquecento con chiostro, biblioteca antica e affreschi secenteschi. Qui visse San Benedetto il Moro.",
+    "coordinate": [38.0158, 14.598],
+    "periodo": "Architettura religiosa",
+    "comune": "San Fratello",
+    "provincia": "Messina",
+    "copertina": "assets/img/disegni/convento-santa-maria-di-gesu.jpg",
     "galleria": [],
     "podcast": []
   }

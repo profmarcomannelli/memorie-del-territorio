@@ -6,10 +6,34 @@
     "luoghi": ["grotta-san-teodoro"]
   },
   {
+    "epoca": "Antichità",
+    "titolo": "Apollonia, la città sicula",
+    "testo": "Sul monte dove oggi sorge San Fratello esisteva l'antica Apollonia, citata da Cicerone nelle Verrine. Un sito strategico con vista sulle Eolie e la costa tirrenica.",
+    "luoghi": ["san-fratello-centro-storico"]
+  },
+  {
+    "epoca": "263 d.C.",
+    "titolo": "Martirio dei Santi Alfio, Filadelfio e Cirino",
+    "testo": "I tre fratelli, patroni del paese, subiscono il martirio a Lentini. Le loro reliquie saranno in seguito trasferite a San Fratello.",
+    "luoghi": ["san-fratello-centro-storico"]
+  },
+  {
     "epoca": "Intorno all'anno 1000",
     "titolo": "I monaci Basiliani",
     "testo": "Monaci in fuga dall'Oriente si rifugiano nella grotta e la dedicano al santo militare Teodoro.",
     "luoghi": ["grotta-san-teodoro"]
+  },
+  {
+    "epoca": "XI–XII secolo",
+    "titolo": "I Normanni rifondano San Fratello",
+    "testo": "Il conte Ruggero e Adelaide del Vasto portano coloni dall'Italia nordoccidentale — piemontesi, liguri, lombardi — a ripopolare il borgo. Nasce l'isola linguistica gallo-italica.",
+    "luoghi": ["san-fratello-centro-storico", "bosco-san-fratello"]
+  },
+  {
+    "epoca": "~1090",
+    "titolo": "Il Santuario dei Tre Santi",
+    "testo": "Sul Monte Vecchio viene fondato il Santuario dei Tre Santi in stile arabo-normanno, sui resti di un'antica chiesa greca.",
+    "luoghi": ["san-fratello-centro-storico"]
   },
   {
     "epoca": "1178",
@@ -36,6 +60,24 @@
     "luoghi": ["castello-barone-cupane"]
   },
   {
+    "epoca": "1526",
+    "titolo": "Nasce San Benedetto il Moro",
+    "testo": "A San Fratello nasce Benedetto, figlio di schiavi africani, che diventerà santo e patrono di Palermo. Vivrà nel convento di Santa Maria di Gesù.",
+    "luoghi": ["san-fratello-centro-storico", "convento-santa-maria-di-gesu"]
+  },
+  {
+    "epoca": "Seconda metà del '500",
+    "titolo": "Il convento di Santa Maria di Gesù",
+    "testo": "I Francescani fondano il convento con chiostro e biblioteca. Diventerà un centro di cultura per tutto il territorio.",
+    "luoghi": ["convento-santa-maria-di-gesu"]
+  },
+  {
+    "epoca": "Inizio '600",
+    "titolo": "Gli affreschi di Fra Emanuele da Como",
+    "testo": "Il chiostro del convento viene decorato con affreschi di Fra Emanuele da Como, rara testimonianza del barocco francescano siciliano.",
+    "luoghi": ["convento-santa-maria-di-gesu"]
+  },
+  {
     "epoca": "Sei-Settecento",
     "titolo": "Il castello diventa anche residenza",
     "testo": "Accanto alla fortezza medievale cresce un'elegante residenza baronale.",
@@ -44,8 +86,8 @@
   {
     "epoca": "8 gennaio 1922",
     "titolo": "La frana di San Fratello",
-    "testo": "Una frana distrugge gran parte di San Fratello: oltre 1.500 persone vengono trasferite verso la marina di Acquedolci.",
-    "luoghi": ["residenza-di-giorgio", "marina-vecchia"]
+    "testo": "Una frana distrugge gran parte di San Fratello: dieci chiese e migliaia di edifici. Oltre 1.500 persone vengono trasferite verso la marina di Acquedolci.",
+    "luoghi": ["san-fratello-centro-storico", "convento-santa-maria-di-gesu", "residenza-di-giorgio", "marina-vecchia"]
   },
   {
     "epoca": "Anni '20 del Novecento",
@@ -66,9 +108,21 @@
     "luoghi": ["castello-barone-cupane"]
   },
   {
+    "epoca": "1993",
+    "titolo": "Nasce il Parco dei Nebrodi",
+    "testo": "I boschi attorno a San Fratello entrano nel Parco dei Nebrodi, la più grande area naturale protetta della Sicilia.",
+    "luoghi": ["bosco-san-fratello"]
+  },
+  {
     "epoca": "2004",
     "titolo": "Restauro della Chiesa di San Giuseppe",
     "testo": "La chiesetta custodita nel castello viene restaurata.",
     "luoghi": ["castello-barone-cupane"]
+  },
+  {
+    "epoca": "Febbraio 2010",
+    "titolo": "Nuova frana a San Fratello",
+    "testo": "Un'altra frana colpisce il borgo. Circa 1.500 residenti vengono evacuati. L'antica Chiesa di San Nicolò è dichiarata inagibile.",
+    "luoghi": ["san-fratello-centro-storico"]
   }
 ]

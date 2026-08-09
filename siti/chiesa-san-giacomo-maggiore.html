@@ -20,7 +20,6 @@
       <ul class="site-nav">
         <li><a href="../mappa.html">Mappa</a></li>
         <li><a href="../podcast/index.html">Podcast</a></li>
-        <li><a href="../galleria/index.html">Galleria</a></li>
         <li><a href="../dietro-le-quinte/index.html">Dietro le quinte</a></li>
       </ul>
     </nav>
@@ -29,31 +28,7 @@
   <!-- HERO -->
   <section class="inner-hero has-brush">
     <figure class="hero-brush">
-      <!-- PENNELLATA: contiene la foto del luogo (ora segnaposto).
-           Per inserire la foto reale: sostituisci la riga <rect .../> qui sotto con
-           <image href="../assets/img/chiesa-san-giacomo-hero.jpg" width="1200" height="700" preserveAspectRatio="xMidYMid slice"/>
-           e rimuovi il <text> "FOTO IN ARRIVO". Le striature (bristle) puoi lasciarle o toglierle. -->
-      <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img"
-           aria-label="Foto della Chiesa di San Giacomo Maggiore (in arrivo)">
-        <defs>
-          <clipPath id="brush-chiesa">
-            <path d="M26,120 C200,70 460,72 700,92 C920,110 1060,96 1178,80 C1190,220 1190,460 1176,632 C1000,672 740,664 500,644 C320,628 170,640 30,656 C20,460 20,300 26,120 Z M20,260 C6,272 0,300 4,326 C14,302 20,282 20,260 Z M1184,250 C1200,264 1206,296 1200,324 C1190,298 1184,272 1184,250 Z M80,648 C66,672 50,688 30,700 C42,672 60,650 80,648 Z"/>
-          </clipPath>
-          <linearGradient id="ph-chiesa" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#2C6FB0"/>
-            <stop offset="1" stop-color="#0D3B6E"/>
-          </linearGradient>
-        </defs>
-        <g clip-path="url(#brush-chiesa)">
-          <rect width="1200" height="700" fill="url(#ph-chiesa)"/>
-          <path d="M40,150 C360,120 760,128 1160,150" stroke="rgba(255,255,255,0.14)" stroke-width="3" fill="none"/>
-          <path d="M40,360 C360,360 760,362 1160,348" stroke="rgba(0,0,0,0.08)" stroke-width="4" fill="none"/>
-          <path d="M40,600 C360,580 760,586 1160,600" stroke="rgba(255,255,255,0.06)" stroke-width="2" fill="none"/>
-          <text x="600" y="400" text-anchor="middle" class="brush-ph-text">FOTO IN ARRIVO</text>
-        </g>
-        <ellipse cx="8" cy="380" rx="7" ry="4" fill="#1565C0" opacity="0.5"/>
-        <ellipse cx="1196" cy="380" rx="7" ry="4" fill="#1565C0" opacity="0.5"/>
-      </svg>
+      <img class="hero-brush-img" src="../assets/img/hero/chiesa-san-giacomo-maggiore.jpg" alt="Illustrazione della Chiesa di San Giacomo Maggiore">
     </figure>
     <div class="hero-text">
       <span class="periodo-badge">Architettura religiosa</span>
@@ -147,13 +122,17 @@
     <p class="section-label reveal">Immagini</p>
     <h2 class="section-title reveal">Galleria<br><em>fotografica</em></h2>
 
-    <div class="placeholder-vuoto reveal reveal-delay-1">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <circle cx="8.5" cy="8.5" r="1.5"/>
-        <polyline points="21 15 16 10 5 21"/>
-      </svg>
-      <p>Le fotografie della Chiesa di San Giacomo Maggiore saranno caricate durante il corso</p>
+    <div class="galleria-grid reveal reveal-delay-1">
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/01.jpg" alt="Chiesa di San Giacomo Maggiore — foto 1" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/02.jpg" alt="Chiesa di San Giacomo Maggiore — foto 2" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/03.jpg" alt="Chiesa di San Giacomo Maggiore — foto 3" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/04.jpg" alt="Chiesa di San Giacomo Maggiore — foto 4" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/05.jpg" alt="Chiesa di San Giacomo Maggiore — foto 5" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/06.jpg" alt="Chiesa di San Giacomo Maggiore — foto 6" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/07.jpg" alt="Chiesa di San Giacomo Maggiore — foto 7" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/08.jpg" alt="Chiesa di San Giacomo Maggiore — foto 8" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/09.jpg" alt="Chiesa di San Giacomo Maggiore — foto 9" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
+      <div class="galleria-item"><img src="../assets/img/galleria/chiesa-san-giacomo-maggiore/10.jpg" alt="Chiesa di San Giacomo Maggiore — foto 10" loading="lazy" onclick="apriLightbox(this.src,this.alt)"></div>
     </div>
 
     <!-- LINEA DEL TEMPO -->
@@ -163,8 +142,8 @@
 
     <!-- NAVIGAZIONE TRA LUOGHI -->
     <div style="display:flex;justify-content:flex-end;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--pietra)" class="reveal">
-      <a href="../mappa.html" style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);text-decoration:none;">
-        Tutti i luoghi sulla mappa →
+      <a href="san-fratello-centro-storico.html" style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);text-decoration:none;">
+        Prossimo luogo: Centro storico di San Fratello →
       </a>
     </div>
   </section>

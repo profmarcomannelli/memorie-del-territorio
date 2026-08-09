@@ -119,6 +119,9 @@ function initActiveNav() {
   });
 }
 
+// ── COLORI LUOGHI (ordine = indice in siti.json) ──
+var COLORI_SITI = ['#2196F3', '#4BA535', '#D4841E', '#1C2035', '#1565C0', '#B8860B', '#7B6B3A', '#C9A84C'];
+
 // ── POPOLA GRIGLIA SITI (solo index.html) ──
 async function caricaSiti() {
   const griglia = document.getElementById('griglia-siti');
@@ -126,12 +129,27 @@ async function caricaSiti() {
   try {
     const res = await fetch('dati/siti.json');
     const siti = await res.json();
-    const colori = ['#2196F3', '#4BA535', '#D4841E', '#1C2035', '#1565C0'];
 
-    griglia.innerHTML = siti.map((sito, i) => {
-      const c = colori[i % colori.length];
-      return `
-        <a href="siti/${sito.id}.html" class="sito-card reveal reveal-delay-${i}">
+    // Raggruppa per comune mantenendo l'ordine
+    const gruppi = [];
+    let corrente = null;
+    siti.forEach((sito, i) => {
+      sito._idx = i;
+      if (!corrente || corrente.comune !== sito.comune) {
+        corrente = { comune: sito.comune, siti: [] };
+        gruppi.push(corrente);
+      }
+      corrente.siti.push(sito);
+    });
+
+    griglia.innerHTML = gruppi.map(g => {
+      const header = `<p class="siti-gruppo-titolo reveal">${g.comune}</p>`;
+      const cards = `<div class="siti-grid">${g.siti.map(sito => {
+        const i = sito._idx;
+        const c = COLORI_SITI[i % COLORI_SITI.length];
+        const nomeCard = sito.comune + ' – ' + sito.nome;
+        return `
+        <a href="siti/${sito.id}.html" class="sito-card reveal reveal-delay-${i % 4}">
           <div class="sito-card-img" style="background:${c}18">
             <img class="sito-card-foto" src="${sito.copertina}" alt="Disegno del luogo: ${sito.nome}" loading="lazy"
                  onload="this.parentElement.classList.add('has-foto')" onerror="this.remove()">
@@ -144,11 +162,13 @@ async function caricaSiti() {
           <div class="sito-card-stripe" style="background:${c}"></div>
           <div class="sito-card-body">
             <span class="sito-card-periodo">${sito.periodo}</span>
-            <h3 class="sito-card-nome">${sito.nome}</h3>
+            <h3 class="sito-card-nome">${nomeCard}</h3>
             <p class="sito-card-desc">${sito.descrizione}</p>
             <span class="sito-card-cta">Esplora →</span>
           </div>
         </a>`;
+      }).join('')}</div>`;
+      return header + cards;
     }).join('');
 
     setTimeout(initReveal, 50);
@@ -179,6 +199,25 @@ async function caricaTimeline() {
   }
 }
 
+// ── LIGHTBOX (disponibile su tutte le pagine) ──
+function initLightbox() {
+  if (document.getElementById('lightbox')) return;
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.id = 'lightbox';
+  lb.innerHTML = '<button class="lightbox-close">&times;</button><img id="lightbox-img" src="" alt="">';
+  document.body.appendChild(lb);
+  lb.addEventListener('click', () => { lb.classList.remove('open'); document.body.style.overflow = ''; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; } });
+}
+function apriLightbox(src, alt) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt || '';
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', () => {
   initPageTransition();
@@ -189,4 +228,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   caricaSiti();
   caricaTimeline();
+  initLightbox();
 });

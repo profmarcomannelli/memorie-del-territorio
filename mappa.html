@@ -21,7 +21,6 @@
       <ul class="site-nav">
         <li><a href="mappa.html" class="active">Mappa</a></li>
         <li><a href="podcast/index.html">Podcast</a></li>
-        <li><a href="galleria/index.html">Galleria</a></li>
         <li><a href="dietro-le-quinte/index.html">Dietro le quinte</a></li>
       </ul>
     </nav>
@@ -44,12 +43,16 @@
   <div id="mappa"></div>
 
   <div class="mappa-legenda">
-    <span style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#aaa;margin-right:0.5rem;">Siti:</span>
+    <span style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#aaa;margin-right:0.5rem;">Acquedolci:</span>
     <div class="legenda-item"><div class="legenda-dot" style="background:#2196F3"></div> Marina vecchia</div>
     <div class="legenda-item"><div class="legenda-dot" style="background:#4BA535"></div> Castello Barone Cupane</div>
     <div class="legenda-item"><div class="legenda-dot" style="background:#D4841E"></div> Grotta di San Teodoro</div>
     <div class="legenda-item"><div class="legenda-dot" style="background:#1C2035"></div> Residenza Di Giorgio</div>
     <div class="legenda-item"><div class="legenda-dot" style="background:#1565C0"></div> Chiesa di San Giacomo Maggiore</div>
+    <span style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#aaa;margin-right:0.5rem;margin-left:1rem;">San Fratello:</span>
+    <div class="legenda-item"><div class="legenda-dot" style="background:#B8860B"></div> Centro storico</div>
+    <div class="legenda-item"><div class="legenda-dot" style="background:#7B6B3A"></div> Bosco</div>
+    <div class="legenda-item"><div class="legenda-dot" style="background:#C9A84C"></div> Ex convento</div>
   </div>
 
   <footer class="site-footer">
@@ -69,11 +72,11 @@
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
-      const colori = ['#2196F3', '#4BA535', '#D4841E', '#1C2035', '#1565C0'];
+      const colori = ['#2196F3', '#4BA535', '#D4841E', '#1C2035', '#1565C0', '#B8860B', '#7B6B3A', '#C9A84C'];
 
       const map = L.map('mappa', {
-        center: [38.0565, 14.588],
-        zoom: 15,
+        center: [38.036, 14.593],
+        zoom: 13,
         zoomControl: true,
         scrollWheelZoom: true
       });

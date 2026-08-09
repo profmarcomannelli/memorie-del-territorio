@@ -227,6 +227,18 @@ body {
 }
 
 /* ── CARD SITI ── */
+.siti-gruppo-titolo {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--pietra);
+}
+.siti-gruppo-titolo:first-child { margin-top: 0; }
+
 .siti-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -778,17 +790,29 @@ html { transition: opacity 0.45s ease; }
   padding: 0.12rem 0.45rem; border-radius: 2px; vertical-align: middle;
 }
 
-/* ── MASONRY GALLERY ── */
-.galleria-grid { columns: 3 260px; gap: 1rem; }
+/* ── GALLERIA SCORREVOLE (strip orizzontale: non allunga la pagina, non nasconde la timeline) ── */
+.galleria-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.75rem;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
 .galleria-item {
-  break-inside: avoid;
-  margin-bottom: 1rem;
+  flex: 0 0 auto;
+  width: 260px;
+  height: 180px;
   overflow: hidden;
   cursor: zoom-in;
   border-radius: 1px;
+  scroll-snap-align: start;
 }
 .galleria-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -953,15 +977,15 @@ html { transition: opacity 0.45s ease; }
 }
 .legenda-dot { width: 11px; height: 11px; border-radius: 50%; }
 
-/* ── HERO CON PENNELLATA (pennellata curva sopra il testo; segnaposto finché non c'è la foto) ── */
+/* ── HERO CON FOTO (immagine intera, nessun ritaglio: le mappe illustrate hanno scritte fino ai bordi) ── */
 .inner-hero.has-brush { text-align: center; padding: 6rem 1rem 3.5rem; }
 .inner-hero.has-brush .hero-brush {
   position: relative; z-index: 2;
   width: 100%; max-width: 1040px; margin: 0 auto 0.75rem;
 }
-.inner-hero.has-brush .hero-brush svg {
+.inner-hero.has-brush .hero-brush-img {
   width: 100%; height: auto; display: block;
-  transform: rotate(-2deg);
+  border-radius: 14px;
   filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
 }
 .inner-hero.has-brush .hero-text {
@@ -969,24 +993,6 @@ html { transition: opacity 0.45s ease; }
   max-width: 760px; margin: 0 auto;
 }
 .inner-hero.has-brush .hero-text h1 { margin-bottom: 0.5rem; }
-.brush-ph-text {
-  font-family: var(--font-mono);
-  font-size: 22px;
-  letter-spacing: 4px;
-  fill: rgba(255, 255, 255, 0.82);
-}
-.inner-hero.has-brush .brush-credit {
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 0.35rem;
-}
-.inner-hero.has-brush .brush-credit a {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: underline;
-}
 @media (max-width: 760px) {
   .inner-hero.has-brush { padding: 5rem 0.75rem 2.5rem; }
-  .brush-ph-text { font-size: 26px; }
 }
