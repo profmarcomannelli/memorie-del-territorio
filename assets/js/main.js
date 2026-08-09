@@ -130,46 +130,29 @@ async function caricaSiti() {
     const res = await fetch('dati/siti.json');
     const siti = await res.json();
 
-    // Raggruppa per comune mantenendo l'ordine
-    const gruppi = [];
-    let corrente = null;
-    siti.forEach((sito, i) => {
-      sito._idx = i;
-      if (!corrente || corrente.comune !== sito.comune) {
-        corrente = { comune: sito.comune, siti: [] };
-        gruppi.push(corrente);
-      }
-      corrente.siti.push(sito);
-    });
-
-    griglia.innerHTML = gruppi.map(g => {
-      const header = `<p class="siti-gruppo-titolo reveal">${g.comune}</p>`;
-      const cards = `<div class="siti-grid">${g.siti.map(sito => {
-        const i = sito._idx;
-        const c = COLORI_SITI[i % COLORI_SITI.length];
-        const nomeCard = sito.comune + ' – ' + sito.nome;
-        return `
-        <a href="siti/${sito.id}.html" class="sito-card reveal reveal-delay-${i % 4}">
-          <div class="sito-card-img" style="background:${c}18">
-            <img class="sito-card-foto" src="${sito.copertina}" alt="Disegno del luogo: ${sito.nome}" loading="lazy"
-                 onload="this.parentElement.classList.add('has-foto')" onerror="this.remove()">
-            <svg class="card-pin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="${c}"/>
-              <circle cx="12" cy="9" r="2.5" fill="white"/>
-            </svg>
-            <span class="card-pin-badge" style="background:${c}" aria-hidden="true"></span>
-          </div>
-          <div class="sito-card-stripe" style="background:${c}"></div>
-          <div class="sito-card-body">
-            <span class="sito-card-periodo">${sito.periodo}</span>
-            <h3 class="sito-card-nome">${nomeCard}</h3>
-            <p class="sito-card-desc">${sito.descrizione}</p>
-            <span class="sito-card-cta">Esplora →</span>
-          </div>
-        </a>`;
-      }).join('')}</div>`;
-      return header + cards;
-    }).join('');
+    griglia.innerHTML = `<div class="siti-grid">${siti.map((sito, i) => {
+      const c = COLORI_SITI[i % COLORI_SITI.length];
+      const nomeCard = sito.comune + ' – ' + sito.nome;
+      return `
+      <a href="siti/${sito.id}.html" class="sito-card reveal reveal-delay-${i % 4}">
+        <div class="sito-card-img" style="background:${c}18">
+          <img class="sito-card-foto" src="${sito.copertina}" alt="Disegno del luogo: ${sito.nome}" loading="lazy"
+               onload="this.parentElement.classList.add('has-foto')" onerror="this.remove()">
+          <svg class="card-pin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="${c}"/>
+            <circle cx="12" cy="9" r="2.5" fill="white"/>
+          </svg>
+          <span class="card-pin-badge" style="background:${c}" aria-hidden="true"></span>
+        </div>
+        <div class="sito-card-stripe" style="background:${c}"></div>
+        <div class="sito-card-body">
+          <span class="sito-card-periodo">${sito.periodo}</span>
+          <h3 class="sito-card-nome">${nomeCard}</h3>
+          <p class="sito-card-desc">${sito.descrizione}</p>
+          <span class="sito-card-cta">Esplora →</span>
+        </div>
+      </a>`;
+    }).join('')}</div>`;
 
     setTimeout(initReveal, 50);
   } catch (e) {
@@ -187,11 +170,15 @@ async function caricaTimeline() {
     const eventi = await res.json();
     cont.innerHTML = eventi.map(ev => {
       const mine = Array.isArray(ev.luoghi) && ev.luoghi.includes(luogo);
+      const img = ev.immagine
+        ? `<img class="tl-img" src="../${ev.immagine}" alt="${ev.titolo}" loading="lazy" onclick="apriLightbox(this.src,this.alt)">`
+        : '';
       return `
         <div class="tl-item${mine ? ' is-luogo' : ''}">
           <p class="tl-epoca">${ev.epoca}</p>
           <h3 class="tl-titolo">${ev.titolo}${mine ? '<span class="tl-badge">questo luogo</span>' : ''}</h3>
           <p class="tl-testo">${ev.testo}</p>
+          ${img}
         </div>`;
     }).join('');
   } catch (e) {

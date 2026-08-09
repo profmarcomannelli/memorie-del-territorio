@@ -87,7 +87,8 @@
     "epoca": "8 gennaio 1922",
     "titolo": "La frana di San Fratello",
     "testo": "Una frana distrugge gran parte di San Fratello: dieci chiese e migliaia di edifici. Oltre 1.500 persone vengono trasferite verso la marina di Acquedolci.",
-    "luoghi": ["san-fratello-centro-storico", "convento-santa-maria-di-gesu", "residenza-di-giorgio", "marina-vecchia"]
+    "luoghi": ["san-fratello-centro-storico", "convento-santa-maria-di-gesu", "residenza-di-giorgio", "marina-vecchia"],
+    "immagine": "assets/img/timeline/frana-1922.jpg"
   },
   {
     "epoca": "Anni '20 del Novecento",
