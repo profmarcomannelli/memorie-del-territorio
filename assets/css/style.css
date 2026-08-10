@@ -841,6 +841,15 @@ html { transition: opacity 0.45s ease; }
 }
 .galleria-item:hover img { transform: scale(1.04); }
 
+.foto-credito {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: #999;
+  margin-top: 0.6rem;
+}
+.foto-credito a { color: #999; }
+
 /* ── LIGHTBOX ── */
 .lightbox {
   display: none;
