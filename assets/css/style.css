@@ -486,6 +486,14 @@ body {
   margin-top: 1.5rem;
 }
 
+.footer-copyright {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  opacity: 0.3;
+  margin-top: 0.4rem;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .site-nav { display: none; }
